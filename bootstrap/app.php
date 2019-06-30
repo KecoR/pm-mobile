@@ -71,6 +71,10 @@ $app->singleton(
 //     App\Http\Middleware\CorsMiddleware::class
 //  ]);
 
+$app->middleware([
+    \Barryvdh\Cors\HandleCors::class,
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
