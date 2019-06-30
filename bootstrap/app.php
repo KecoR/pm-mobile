@@ -21,7 +21,7 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->configure('cors');
+$app->configure('cors');
 
 $app->withFacades();
 
@@ -67,13 +67,13 @@ $app->singleton(
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
-$app->middleware([
-    App\Http\Middleware\CorsMiddleware::class
- ]);
-
 // $app->middleware([
-//     \Barryvdh\Cors\HandleCors::class,
-// ]);
+//     App\Http\Middleware\CorsMiddleware::class
+//  ]);
+
+$app->middleware([
+    \Barryvdh\Cors\HandleCors::class,
+]);
 
 /*
 |--------------------------------------------------------------------------
